@@ -41,9 +41,21 @@ public class MainJframe extends javax.swing.JFrame {
         panel_tengah = new javax.swing.JPanel();
         ManajemenData = new javax.swing.JPanel();
         Navigasi = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        cardTotalBarang = new javax.swing.JPanel();
+        JudulTotalBarang = new javax.swing.JLabel();
+        ContainerLogoTotalBarang = new javax.swing.JPanel();
+        LabelAngkaTotalBarang = new javax.swing.JLabel();
+        labeliconTotalBarang = new javax.swing.JLabel();
+        cardTotalKategori = new javax.swing.JPanel();
+        JudulTotalKategori = new javax.swing.JLabel();
+        ContainerLogoTotalBarang1 = new javax.swing.JPanel();
+        LabelAngkaTotalSuplier = new javax.swing.JLabel();
+        labeliconTotalSuplier = new javax.swing.JLabel();
+        cardTotalSuplier = new javax.swing.JPanel();
+        JudulTotalSuplier = new javax.swing.JLabel();
+        ContainerLogoTotalBarang2 = new javax.swing.JPanel();
+        LabelAngkaTotalSuplier1 = new javax.swing.JLabel();
+        labeliconTotalSuplier1 = new javax.swing.JLabel();
         ContainerConten = new javax.swing.JPanel();
         DataBarang = new javax.swing.JPanel();
         DataSuplier = new javax.swing.JPanel();
@@ -187,49 +199,257 @@ public class MainJframe extends javax.swing.JFrame {
 
         Navigasi.setPreferredSize(new java.awt.Dimension(1420, 175));
 
-        jButton1.setText("jButton1");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        cardTotalBarang.setBackground(java.awt.Color.white);
+        cardTotalBarang.setForeground(new java.awt.Color(255, 255, 255));
+        cardTotalBarang.setPreferredSize(new java.awt.Dimension(191, 88));
+        cardTotalBarang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                cardTotalBarangMouseClicked(evt);
             }
         });
 
-        jButton2.setText("jButton2");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        JudulTotalBarang.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        JudulTotalBarang.setText("Total Barang");
+        JudulTotalBarang.setPreferredSize(new java.awt.Dimension(129, 22));
+        JudulTotalBarang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                JudulTotalBarangMouseClicked(evt);
             }
         });
 
-        jButton3.setText("jButton3");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        ContainerLogoTotalBarang.setBackground(new java.awt.Color(255, 255, 255));
+        ContainerLogoTotalBarang.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ContainerLogoTotalBarang.setMinimumSize(new java.awt.Dimension(39, 39));
+
+        javax.swing.GroupLayout ContainerLogoTotalBarangLayout = new javax.swing.GroupLayout(ContainerLogoTotalBarang);
+        ContainerLogoTotalBarang.setLayout(ContainerLogoTotalBarangLayout);
+        ContainerLogoTotalBarangLayout.setHorizontalGroup(
+            ContainerLogoTotalBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        ContainerLogoTotalBarangLayout.setVerticalGroup(
+            ContainerLogoTotalBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        LabelAngkaTotalBarang.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        LabelAngkaTotalBarang.setText("0");
+        LabelAngkaTotalBarang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                LabelAngkaTotalBarangMouseClicked(evt);
             }
         });
+
+        labeliconTotalBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/asset/icon/box (card).png"))); // NOI18N
+        labeliconTotalBarang.setPreferredSize(new java.awt.Dimension(40, 40));
+        labeliconTotalBarang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labeliconTotalBarangMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout cardTotalBarangLayout = new javax.swing.GroupLayout(cardTotalBarang);
+        cardTotalBarang.setLayout(cardTotalBarangLayout);
+        cardTotalBarangLayout.setHorizontalGroup(
+            cardTotalBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardTotalBarangLayout.createSequentialGroup()
+                .addComponent(JudulTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(cardTotalBarangLayout.createSequentialGroup()
+                .addComponent(ContainerLogoTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labeliconTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(LabelAngkaTotalBarang)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cardTotalBarangLayout.setVerticalGroup(
+            cardTotalBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardTotalBarangLayout.createSequentialGroup()
+                .addGroup(cardTotalBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LabelAngkaTotalBarang)
+                    .addGroup(cardTotalBarangLayout.createSequentialGroup()
+                        .addComponent(JudulTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(cardTotalBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ContainerLogoTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labeliconTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(24, 24, 24))
+        );
+
+        cardTotalKategori.setBackground(java.awt.Color.white);
+        cardTotalKategori.setForeground(new java.awt.Color(255, 255, 255));
+        cardTotalKategori.setPreferredSize(new java.awt.Dimension(191, 88));
+        cardTotalKategori.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cardTotalKategoriMouseClicked(evt);
+            }
+        });
+
+        JudulTotalKategori.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        JudulTotalKategori.setText("Total Kategori");
+        JudulTotalKategori.setPreferredSize(new java.awt.Dimension(129, 22));
+        JudulTotalKategori.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JudulTotalKategoriMouseClicked(evt);
+            }
+        });
+
+        ContainerLogoTotalBarang1.setBackground(new java.awt.Color(255, 255, 255));
+        ContainerLogoTotalBarang1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ContainerLogoTotalBarang1.setMinimumSize(new java.awt.Dimension(39, 39));
+
+        javax.swing.GroupLayout ContainerLogoTotalBarang1Layout = new javax.swing.GroupLayout(ContainerLogoTotalBarang1);
+        ContainerLogoTotalBarang1.setLayout(ContainerLogoTotalBarang1Layout);
+        ContainerLogoTotalBarang1Layout.setHorizontalGroup(
+            ContainerLogoTotalBarang1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        ContainerLogoTotalBarang1Layout.setVerticalGroup(
+            ContainerLogoTotalBarang1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        LabelAngkaTotalSuplier.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        LabelAngkaTotalSuplier.setText("0");
+
+        labeliconTotalSuplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/asset/icon/sidebar.png"))); // NOI18N
+        labeliconTotalSuplier.setPreferredSize(new java.awt.Dimension(40, 40));
+        labeliconTotalSuplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labeliconTotalSuplierMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout cardTotalKategoriLayout = new javax.swing.GroupLayout(cardTotalKategori);
+        cardTotalKategori.setLayout(cardTotalKategoriLayout);
+        cardTotalKategoriLayout.setHorizontalGroup(
+            cardTotalKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardTotalKategoriLayout.createSequentialGroup()
+                .addComponent(JudulTotalKategori, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(cardTotalKategoriLayout.createSequentialGroup()
+                .addComponent(ContainerLogoTotalBarang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labeliconTotalSuplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(LabelAngkaTotalSuplier)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cardTotalKategoriLayout.setVerticalGroup(
+            cardTotalKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardTotalKategoriLayout.createSequentialGroup()
+                .addGroup(cardTotalKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LabelAngkaTotalSuplier)
+                    .addGroup(cardTotalKategoriLayout.createSequentialGroup()
+                        .addComponent(JudulTotalKategori, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(cardTotalKategoriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ContainerLogoTotalBarang1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labeliconTotalSuplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(24, 24, 24))
+        );
+
+        cardTotalSuplier.setBackground(java.awt.Color.white);
+        cardTotalSuplier.setForeground(new java.awt.Color(255, 255, 255));
+        cardTotalSuplier.setPreferredSize(new java.awt.Dimension(191, 88));
+        cardTotalSuplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cardTotalSuplierMouseClicked(evt);
+            }
+        });
+
+        JudulTotalSuplier.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        JudulTotalSuplier.setText("Total Suplier");
+        JudulTotalSuplier.setPreferredSize(new java.awt.Dimension(129, 22));
+        JudulTotalSuplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JudulTotalSuplierMouseClicked(evt);
+            }
+        });
+
+        ContainerLogoTotalBarang2.setBackground(new java.awt.Color(255, 255, 255));
+        ContainerLogoTotalBarang2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ContainerLogoTotalBarang2.setMinimumSize(new java.awt.Dimension(39, 39));
+
+        javax.swing.GroupLayout ContainerLogoTotalBarang2Layout = new javax.swing.GroupLayout(ContainerLogoTotalBarang2);
+        ContainerLogoTotalBarang2.setLayout(ContainerLogoTotalBarang2Layout);
+        ContainerLogoTotalBarang2Layout.setHorizontalGroup(
+            ContainerLogoTotalBarang2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        ContainerLogoTotalBarang2Layout.setVerticalGroup(
+            ContainerLogoTotalBarang2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        LabelAngkaTotalSuplier1.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        LabelAngkaTotalSuplier1.setText("0");
+        LabelAngkaTotalSuplier1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelAngkaTotalSuplier1MouseClicked(evt);
+            }
+        });
+
+        labeliconTotalSuplier1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/asset/icon/truck.png"))); // NOI18N
+        labeliconTotalSuplier1.setPreferredSize(new java.awt.Dimension(40, 40));
+        labeliconTotalSuplier1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labeliconTotalSuplier1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout cardTotalSuplierLayout = new javax.swing.GroupLayout(cardTotalSuplier);
+        cardTotalSuplier.setLayout(cardTotalSuplierLayout);
+        cardTotalSuplierLayout.setHorizontalGroup(
+            cardTotalSuplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardTotalSuplierLayout.createSequentialGroup()
+                .addComponent(JudulTotalSuplier, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(cardTotalSuplierLayout.createSequentialGroup()
+                .addComponent(ContainerLogoTotalBarang2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labeliconTotalSuplier1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(LabelAngkaTotalSuplier1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cardTotalSuplierLayout.setVerticalGroup(
+            cardTotalSuplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardTotalSuplierLayout.createSequentialGroup()
+                .addGroup(cardTotalSuplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LabelAngkaTotalSuplier1)
+                    .addGroup(cardTotalSuplierLayout.createSequentialGroup()
+                        .addComponent(JudulTotalSuplier, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(cardTotalSuplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ContainerLogoTotalBarang2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labeliconTotalSuplier1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(24, 24, 24))
+        );
 
         javax.swing.GroupLayout NavigasiLayout = new javax.swing.GroupLayout(Navigasi);
         Navigasi.setLayout(NavigasiLayout);
         NavigasiLayout.setHorizontalGroup(
             NavigasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NavigasiLayout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(jButton1)
-                .addGap(117, 117, 117)
-                .addComponent(jButton2)
-                .addGap(121, 121, 121)
-                .addComponent(jButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addComponent(cardTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(cardTotalSuplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(cardTotalKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(697, Short.MAX_VALUE))
         );
         NavigasiLayout.setVerticalGroup(
             NavigasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(NavigasiLayout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addGroup(NavigasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addGap(71, 71, 71))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NavigasiLayout.createSequentialGroup()
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addGroup(NavigasiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cardTotalKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardTotalSuplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cardTotalBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
         );
 
         ContainerConten.setBackground(new java.awt.Color(204, 255, 204));
@@ -411,20 +631,60 @@ public class MainJframe extends javax.swing.JFrame {
         Utility.setSideBar(panel_tengah, Setting);
     }//GEN-LAST:event_jLabelUsesrsMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void cardTotalBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardTotalBarangMouseClicked
         // TODO add your handling code here:
         Utility.setSideBar(ContainerConten, DataBarang);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_cardTotalBarangMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void cardTotalSuplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardTotalSuplierMouseClicked
         // TODO add your handling code here:
         Utility.setSideBar(ContainerConten, DataSuplier);
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_cardTotalSuplierMouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void cardTotalKategoriMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardTotalKategoriMouseClicked
         // TODO add your handling code here:
         Utility.setSideBar(ContainerConten, DataKategori);
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_cardTotalKategoriMouseClicked
+
+    private void JudulTotalBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JudulTotalBarangMouseClicked
+        // TODO add your handling code here:
+        Utility.setSideBar(ContainerConten, DataBarang);
+    }//GEN-LAST:event_JudulTotalBarangMouseClicked
+
+    private void labeliconTotalBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labeliconTotalBarangMouseClicked
+        // TODO add your handling code here:
+        Utility.setSideBar(ContainerConten, DataBarang);
+    }//GEN-LAST:event_labeliconTotalBarangMouseClicked
+
+    private void LabelAngkaTotalBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelAngkaTotalBarangMouseClicked
+        // TODO add your handling code here:
+        Utility.setSideBar(ContainerConten, DataBarang);
+    }//GEN-LAST:event_LabelAngkaTotalBarangMouseClicked
+
+    private void JudulTotalSuplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JudulTotalSuplierMouseClicked
+        // TODO add your handling code here:
+        Utility.setSideBar(ContainerConten, DataSuplier);
+    }//GEN-LAST:event_JudulTotalSuplierMouseClicked
+
+    private void labeliconTotalSuplier1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labeliconTotalSuplier1MouseClicked
+        // TODO add your handling code here:
+        Utility.setSideBar(ContainerConten, DataSuplier);
+    }//GEN-LAST:event_labeliconTotalSuplier1MouseClicked
+
+    private void LabelAngkaTotalSuplier1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelAngkaTotalSuplier1MouseClicked
+        // TODO add your handling code here:
+        Utility.setSideBar(ContainerConten, DataSuplier);
+    }//GEN-LAST:event_LabelAngkaTotalSuplier1MouseClicked
+
+    private void JudulTotalKategoriMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JudulTotalKategoriMouseClicked
+        // TODO add your handling code here:
+        Utility.setSideBar(ContainerConten, DataKategori);
+    }//GEN-LAST:event_JudulTotalKategoriMouseClicked
+
+    private void labeliconTotalSuplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labeliconTotalSuplierMouseClicked
+        // TODO add your handling code here:
+        Utility.setSideBar(ContainerConten, DataSuplier);
+    }//GEN-LAST:event_labeliconTotalSuplierMouseClicked
 
     /**
      * @param args the command line arguments
@@ -464,10 +724,19 @@ public class MainJframe extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ContainerConten;
+    private javax.swing.JPanel ContainerLogoTotalBarang;
+    private javax.swing.JPanel ContainerLogoTotalBarang1;
+    private javax.swing.JPanel ContainerLogoTotalBarang2;
     private javax.swing.JPanel DataBarang;
     private javax.swing.JPanel DataKategori;
     private javax.swing.JPanel DataSuplier;
     private javax.swing.JPanel JPanelLogo;
+    private javax.swing.JLabel JudulTotalBarang;
+    private javax.swing.JLabel JudulTotalKategori;
+    private javax.swing.JLabel JudulTotalSuplier;
+    private javax.swing.JLabel LabelAngkaTotalBarang;
+    private javax.swing.JLabel LabelAngkaTotalSuplier;
+    private javax.swing.JLabel LabelAngkaTotalSuplier1;
     private javax.swing.JLabel LabelJabatanUser;
     private javax.swing.JLabel LabelNamaToko;
     private javax.swing.JLabel LabelNamaUser;
@@ -475,15 +744,18 @@ public class MainJframe extends javax.swing.JFrame {
     private javax.swing.JPanel ManajemenData;
     private javax.swing.JPanel Navigasi;
     private javax.swing.JPanel Setting;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JPanel cardTotalBarang;
+    private javax.swing.JPanel cardTotalKategori;
+    private javax.swing.JPanel cardTotalSuplier;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelLaporan;
     private javax.swing.JLabel jLabelLogOut;
     private javax.swing.JLabel jLabelLogoTransaksi;
     private javax.swing.JLabel jLabelManajemenData;
     private javax.swing.JLabel jLabelUsesrs;
+    private javax.swing.JLabel labeliconTotalBarang;
+    private javax.swing.JLabel labeliconTotalSuplier;
+    private javax.swing.JLabel labeliconTotalSuplier1;
     private javax.swing.JPanel panelNavigasiBar;
     private javax.swing.JPanel panel_atas;
     private javax.swing.JPanel panel_tengah;
