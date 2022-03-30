@@ -400,6 +400,9 @@
                           <Dimension value="[129, 22]"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="JudulTotalBarangMouseClicked"/>
+                      </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="ContainerLogoTotalBarang">
                       <Properties>
@@ -436,6 +439,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LabelAngkaTotalBarangMouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="labeliconTotalBarang">
                       <Properties>
@@ -446,6 +452,9 @@
                           <Dimension value="[40, 40]"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="labeliconTotalBarangMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -469,7 +478,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="JudulTotalBarang1" min="-2" pref="191" max="-2" attributes="0"/>
+                              <Component id="JudulTotalKategori" min="-2" pref="191" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -488,7 +497,7 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="LabelAngkaTotalSuplier" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="JudulTotalBarang1" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="JudulTotalKategori" min="-2" pref="31" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="ContainerLogoTotalBarang1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -502,7 +511,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="JudulTotalBarang1">
+                    <Component class="javax.swing.JLabel" name="JudulTotalKategori">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="22" style="0"/>
@@ -512,6 +521,9 @@
                           <Dimension value="[129, 22]"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="JudulTotalKategoriMouseClicked"/>
+                      </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="ContainerLogoTotalBarang1">
                       <Properties>
@@ -558,6 +570,9 @@
                           <Dimension value="[40, 40]"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="labeliconTotalSuplierMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -581,7 +596,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="JudulTotalBarang2" min="-2" pref="191" max="-2" attributes="0"/>
+                              <Component id="JudulTotalSuplier" min="-2" pref="191" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -600,7 +615,7 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="LabelAngkaTotalSuplier1" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="JudulTotalBarang2" min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Component id="JudulTotalSuplier" min="-2" pref="31" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="ContainerLogoTotalBarang2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -614,7 +629,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="JudulTotalBarang2">
+                    <Component class="javax.swing.JLabel" name="JudulTotalSuplier">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="22" style="0"/>
@@ -624,6 +639,9 @@
                           <Dimension value="[129, 22]"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="JudulTotalSuplierMouseClicked"/>
+                      </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="ContainerLogoTotalBarang2">
                       <Properties>
@@ -660,6 +678,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LabelAngkaTotalSuplier1MouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="labeliconTotalSuplier1">
                       <Properties>
@@ -670,6 +691,9 @@
                           <Dimension value="[40, 40]"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="labeliconTotalSuplier1MouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
