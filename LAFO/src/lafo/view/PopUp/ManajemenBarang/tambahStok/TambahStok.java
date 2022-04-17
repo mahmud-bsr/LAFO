@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lafo.view.PopUp;
+package lafo.view.PopUp.ManajemenBarang.tambahStok;
 
 /**
  *
