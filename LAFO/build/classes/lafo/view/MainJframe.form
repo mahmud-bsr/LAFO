@@ -32,8 +32,8 @@
                   <Component id="JPanelLogo" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panel_tengah" pref="1420" max="32767" attributes="0"/>
-                  <Component id="panel_atas" pref="1420" max="32767" attributes="0"/>
+                  <Component id="panel_ContenContainer" pref="1420" max="32767" attributes="0"/>
+                  <Component id="panel_Header" pref="1420" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -42,11 +42,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panel_atas" min="-2" max="-2" attributes="0"/>
+                  <Component id="panel_Header" min="-2" max="-2" attributes="0"/>
                   <Component id="JPanelLogo" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panel_tengah" pref="906" max="32767" attributes="0"/>
+                  <Component id="panel_ContenContainer" pref="906" max="32767" attributes="0"/>
                   <Component id="panelNavigasiBar" pref="906" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -54,7 +54,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="panel_atas">
+    <Container class="javax.swing.JPanel" name="panel_Header">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="34" green="66" red="f1" type="rgb"/>
@@ -256,10 +256,10 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="panel_tengah">
+    <Container class="javax.swing.JPanel" name="panel_ContenContainer">
       <Properties>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1410, 904]"/>
+          <Dimension value="[1416, 904]"/>
         </Property>
       </Properties>
 
