@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lafo.view.PopUp;
+package lafo.view.PopUp.ManajemenBarang.tambahStok;
 
 /**
  *
@@ -28,22 +28,53 @@ public class PopUpCariKodeBarang extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelCariKodeBarang = new javax.swing.JPanel();
+        CariBarang = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TabelBarang = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(835, 558));
 
         jPanelCariKodeBarang.setBackground(new java.awt.Color(255, 255, 255));
         jPanelCariKodeBarang.setPreferredSize(new java.awt.Dimension(835, 558));
+
+        CariBarang.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        CariBarang.setText("Cari");
+        CariBarang.setPreferredSize(new java.awt.Dimension(791, 48));
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(791, 433));
+
+        TabelBarang.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(TabelBarang);
 
         javax.swing.GroupLayout jPanelCariKodeBarangLayout = new javax.swing.GroupLayout(jPanelCariKodeBarang);
         jPanelCariKodeBarang.setLayout(jPanelCariKodeBarangLayout);
         jPanelCariKodeBarangLayout.setHorizontalGroup(
             jPanelCariKodeBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 835, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCariKodeBarangLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(jPanelCariKodeBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CariBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
         );
         jPanelCariKodeBarangLayout.setVerticalGroup(
             jPanelCariKodeBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 558, Short.MAX_VALUE)
+            .addGroup(jPanelCariKodeBarangLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(CariBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -106,6 +137,9 @@ public class PopUpCariKodeBarang extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CariBarang;
+    private javax.swing.JTable TabelBarang;
     private javax.swing.JPanel jPanelCariKodeBarang;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
