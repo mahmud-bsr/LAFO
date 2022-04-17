@@ -29,7 +29,7 @@ public class MainJframe extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_atas = new javax.swing.JPanel();
+        panel_Header = new javax.swing.JPanel();
         LabelNamaToko = new javax.swing.JLabel();
         LabelNamaUser = new javax.swing.JLabel();
         LabelJabatanUser = new javax.swing.JLabel();
@@ -40,7 +40,7 @@ public class MainJframe extends javax.swing.JFrame {
         jLabelLaporan = new javax.swing.JLabel();
         jLabelUsesrs = new javax.swing.JLabel();
         jLabelLogOut = new javax.swing.JLabel();
-        panel_tengah = new javax.swing.JPanel();
+        panel_ContenContainer = new javax.swing.JPanel();
         ManajemenData = new javax.swing.JPanel();
         Navigasi = new javax.swing.JPanel();
         cardTotalBarang = new javax.swing.JPanel();
@@ -161,8 +161,8 @@ public class MainJframe extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1, 982));
 
-        panel_atas.setBackground(new java.awt.Color(241, 102, 52));
-        panel_atas.setPreferredSize(new java.awt.Dimension(1280, 76));
+        panel_Header.setBackground(new java.awt.Color(241, 102, 52));
+        panel_Header.setPreferredSize(new java.awt.Dimension(1280, 76));
 
         LabelNamaToko.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         LabelNamaToko.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,31 +180,31 @@ public class MainJframe extends javax.swing.JFrame {
         jLabel7.setText("jLabel7");
         jLabel7.setPreferredSize(new java.awt.Dimension(36, 36));
 
-        javax.swing.GroupLayout panel_atasLayout = new javax.swing.GroupLayout(panel_atas);
-        panel_atas.setLayout(panel_atasLayout);
-        panel_atasLayout.setHorizontalGroup(
-            panel_atasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_atasLayout.createSequentialGroup()
+        javax.swing.GroupLayout panel_HeaderLayout = new javax.swing.GroupLayout(panel_Header);
+        panel_Header.setLayout(panel_HeaderLayout);
+        panel_HeaderLayout.setHorizontalGroup(
+            panel_HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_HeaderLayout.createSequentialGroup()
                 .addGap(78, 78, 78)
                 .addComponent(LabelNamaToko)
                 .addGap(837, 837, 837)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(panel_atasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panel_HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelNamaUser)
                     .addComponent(LabelJabatanUser))
                 .addGap(38, 38, 38))
         );
-        panel_atasLayout.setVerticalGroup(
-            panel_atasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_atasLayout.createSequentialGroup()
+        panel_HeaderLayout.setVerticalGroup(
+            panel_HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_HeaderLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(panel_atasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_atasLayout.createSequentialGroup()
+                .addGroup(panel_HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_HeaderLayout.createSequentialGroup()
                         .addComponent(LabelNamaUser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelJabatanUser))
-                    .addGroup(panel_atasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(panel_HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(LabelNamaToko)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(14, Short.MAX_VALUE))
@@ -285,8 +285,8 @@ public class MainJframe extends javax.swing.JFrame {
                 .addGap(33, 33, 33))
         );
 
-        panel_tengah.setPreferredSize(new java.awt.Dimension(1410, 904));
-        panel_tengah.setLayout(new java.awt.CardLayout());
+        panel_ContenContainer.setPreferredSize(new java.awt.Dimension(1416, 904));
+        panel_ContenContainer.setLayout(new java.awt.CardLayout());
 
         ManajemenData.setBackground(new java.awt.Color(255, 255, 204));
 
@@ -986,7 +986,7 @@ public class MainJframe extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        panel_tengah.add(ManajemenData, "card2");
+        panel_ContenContainer.add(ManajemenData, "card2");
 
         Laporan.setBackground(new java.awt.Color(233, 235, 239));
         Laporan.setPreferredSize(new java.awt.Dimension(1409, 904));
@@ -1116,7 +1116,7 @@ public class MainJframe extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        panel_tengah.add(Laporan, "card4");
+        panel_ContenContainer.add(Laporan, "card4");
 
         Users.setBackground(new java.awt.Color(233, 235, 239));
         Users.setPreferredSize(new java.awt.Dimension(1406, 906));
@@ -1178,7 +1178,7 @@ public class MainJframe extends javax.swing.JFrame {
                 .addGap(98, 98, 98))
         );
 
-        panel_tengah.add(Users, "card5");
+        panel_ContenContainer.add(Users, "card5");
 
         transaksi.setBackground(new java.awt.Color(233, 235, 239));
 
@@ -1323,7 +1323,7 @@ public class MainJframe extends javax.swing.JFrame {
         jLabel25.setText("90000");
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        jLabel26.setText("Rp");
+        jLabel26.setText("Rp.");
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jLabel27.setText("Rp.");
@@ -1369,30 +1369,31 @@ public class MainJframe extends javax.swing.JFrame {
                             .addComponent(jLabel22)
                             .addComponent(jLabel23))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jLabel29)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel28))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel27)
+                                        .addComponent(jLabel29)
+                                        .addComponent(jLabel30)
+                                        .addComponent(jLabel28))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel25)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel26)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel24)
-                                .addGap(155, 155, 155))
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel25)))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(jLabel26)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(jLabel24)
+                                    .addGap(155, 155, 155)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel31)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(6, 6, 6)
                                 .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(41, 41, 41))))
+                        .addGap(37, 37, 37))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1420,8 +1421,8 @@ public class MainJframe extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31))
+                    .addComponent(jLabel31)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
@@ -1461,7 +1462,7 @@ public class MainJframe extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel_tengah.add(transaksi, "card2");
+        panel_ContenContainer.add(transaksi, "card2");
 
         JPanelLogo.setPreferredSize(new java.awt.Dimension(108, 76));
 
@@ -1493,17 +1494,17 @@ public class MainJframe extends javax.swing.JFrame {
                     .addComponent(panelNavigasiBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JPanelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel_tengah, javax.swing.GroupLayout.PREFERRED_SIZE, 1420, Short.MAX_VALUE)
-                    .addComponent(panel_atas, javax.swing.GroupLayout.DEFAULT_SIZE, 1420, Short.MAX_VALUE)))
+                    .addComponent(panel_ContenContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 1420, Short.MAX_VALUE)
+                    .addComponent(panel_Header, javax.swing.GroupLayout.DEFAULT_SIZE, 1420, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel_atas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panel_Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JPanelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panel_tengah, javax.swing.GroupLayout.DEFAULT_SIZE, 906, Short.MAX_VALUE)
+                    .addComponent(panel_ContenContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 906, Short.MAX_VALUE)
                     .addComponent(panelNavigasiBar, javax.swing.GroupLayout.DEFAULT_SIZE, 906, Short.MAX_VALUE)))
         );
 
@@ -1526,22 +1527,22 @@ public class MainJframe extends javax.swing.JFrame {
 
     private void jLabelLogoTransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLogoTransaksiMouseClicked
         // TODO add your handling code here:
-        Utility.setSideBar(panel_tengah, transaksi);
+        Utility.setSideBar(panel_ContenContainer, transaksi);
     }//GEN-LAST:event_jLabelLogoTransaksiMouseClicked
 
     private void jLabelManajemenDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelManajemenDataMouseClicked
         // TODO add your handling code here:
-        Utility.setSideBar(panel_tengah, ManajemenData);
+        Utility.setSideBar(panel_ContenContainer, ManajemenData);
     }//GEN-LAST:event_jLabelManajemenDataMouseClicked
 
     private void jLabelLaporanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLaporanMouseClicked
         // TODO add your handling code here:
-        Utility.setSideBar(panel_tengah, Laporan);
+        Utility.setSideBar(panel_ContenContainer, Laporan);
     }//GEN-LAST:event_jLabelLaporanMouseClicked
 
     private void jLabelUsesrsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUsesrsMouseClicked
         // TODO add your handling code here:
-        Utility.setSideBar(panel_tengah, Users);
+        Utility.setSideBar(panel_ContenContainer, Users);
     }//GEN-LAST:event_jLabelUsesrsMouseClicked
 
     private void cardTotalBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardTotalBarangMouseClicked
@@ -1809,8 +1810,8 @@ public class MainJframe extends javax.swing.JFrame {
     private javax.swing.JLabel labeliconTotalSuplier;
     private javax.swing.JLabel labeliconTotalSuplier1;
     private javax.swing.JPanel panelNavigasiBar;
-    private javax.swing.JPanel panel_atas;
-    private javax.swing.JPanel panel_tengah;
+    private javax.swing.JPanel panel_ContenContainer;
+    private javax.swing.JPanel panel_Header;
     private javax.swing.JPanel transaksi;
     // End of variables declaration//GEN-END:variables
 }
