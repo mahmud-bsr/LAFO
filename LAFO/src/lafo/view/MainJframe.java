@@ -1508,7 +1508,7 @@ public class MainJframe extends javax.swing.JFrame {
                     .addComponent(panelNavigasiBar, javax.swing.GroupLayout.DEFAULT_SIZE, 906, Short.MAX_VALUE)))
         );
 
-        pack();
+        setBounds(0, 0, 1544, 1021);
     }// </editor-fold>//GEN-END:initComponents
 
     //data barang
