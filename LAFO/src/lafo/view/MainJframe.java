@@ -16,9 +16,9 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
-import jdk.javadoc.internal.doclets.formats.html.markup.TableHeader;
+//import jdk.javadoc.internal.doclets.formats.html.markup.TableHeader;
 import lafo.proses.Utility;
-import lafo.proses.DataBase.Connection;
+import lafo.proses.DataBase.Koneksi;
 import lafo.proses.DataBase.DataBaseDisplayer;
 
 /**
@@ -1537,7 +1537,7 @@ public class MainJframe extends javax.swing.JFrame {
 //        jTableBarang.set
     }
     
-    Connection ConnectionDbLafo = new Connection();
+    Koneksi ConnectionDbLafo = new Koneksi();
     DataBaseDisplayer DisplayerDbLafo = new DataBaseDisplayer(ConnectionDbLafo);
     
     private  void tabelUser(){

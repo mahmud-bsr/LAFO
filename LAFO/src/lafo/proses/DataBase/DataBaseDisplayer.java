@@ -12,39 +12,40 @@ import javax.swing.table.DefaultTableModel;
 import lafo.view.MainJframe;
 
 
-public class DataBaseDisplayer extends Connection{
-private Connection koneksi;
+public class DataBaseDisplayer extends Koneksi{
+private Koneksi koneksi;
+private Koneksi defauultConnection = new Koneksi();
 private String sqlTabel;
 private String[] field;
 
     //konstruktor
-    public DataBaseDisplayer(Connection koneksi) {
+    public DataBaseDisplayer(Koneksi koneksi) {
         this.koneksi = koneksi;
     }
     
-    public void tabel(String sqlTabel, String[] taBelHeader, JTable tabel){
+    public void tabel(String sqlTabel, String[] FieldTabel, JTable tabel){
         DefaultTableModel tbmodel = new DefaultTableModel();
         
         //seting table heeader
         
         //menambahkan header pada tabel model
-        for (int i = 0; i < taBelHeader.length; i++) {
-            tbmodel.addColumn(field[i]);
+        for (int i = 0; i < FieldTabel.length; i++) {
+            tbmodel.addColumn(FieldTabel[i]);
         }
+        
+
         //menambahkan header pada awal tabel
         tabel.setModel(tbmodel);
         int kolomLength = tbmodel.getColumnCount() ;
         
-        
         //mengisi data 
-        
         //membuat object untuk penampung data
         Object[] tempData = new Object[kolomLength];
 
         try{
             //mengambil data dari data base melalui object koneksi
-            koneksi.connecting();
-            PreparedStatement pst = koneksi.conn.prepareStatement(sqlTabel);
+            defauultConnection.connecting();
+            PreparedStatement pst = defauultConnection.conn.prepareStatement(sqlTabel);
             ResultSet rs = pst.executeQuery();
             
             //mengambil hasil dari query keadlam object penampung data (tempData)
