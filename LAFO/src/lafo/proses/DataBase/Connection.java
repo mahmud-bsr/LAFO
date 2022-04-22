@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 public class Connection {
     
     public static java.sql.Connection conn;
@@ -33,6 +34,14 @@ public class Connection {
         }
     }
     
+    
+    public void connectionClose(){
+        try {
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public static void main(String[] args) throws SQLException {
         
         

@@ -19,6 +19,7 @@ import javax.swing.table.TableColumnModel;
 import jdk.javadoc.internal.doclets.formats.html.markup.TableHeader;
 import lafo.proses.Utility;
 import lafo.proses.DataBase.Connection;
+import lafo.proses.DataBase.DataBaseDisplayer;
 
 /**
  *
@@ -1536,7 +1537,8 @@ public class MainJframe extends javax.swing.JFrame {
 //        jTableBarang.set
     }
     
-    Connection koneksi = new Connection();
+    Connection ConnectionDbLafo = new Connection();
+    DataBaseDisplayer DisplayerDbLafo = new DataBaseDisplayer(ConnectionDbLafo);
     
     private  void tabelUser(){
         DefaultTableModel tbmodel = new DefaultTableModel();
@@ -1561,36 +1563,39 @@ public class MainJframe extends javax.swing.JFrame {
         
         
         //mengisi data 
-        String[] tempData = {};
         
-//        jTableUser.setModel(judulTabel);
-        System.out.println(jTableUser.getColumnCount());
+        jTableUser.setModel(tbmodel);
+        int kolomLength = tbmodel.getColumnCount() ;
+        Object[] tempData = new Object[kolomLength];
+
+        System.out.println("kolom = "+ kolomLength);
+
         try{
-            koneksi.connecting();
-            PreparedStatement pst = koneksi.conn.prepareStatement(sqlTabelUser);
+            ConnectionDbLafo.connecting();
+            PreparedStatement pst = ConnectionDbLafo.conn.prepareStatement(sqlTabelUser);
             ResultSet rs = pst.executeQuery();
             
             while(rs.next()){
+                
+            
 //                System.out.println(rs.toString());
-//                for (int i = 0; i < tbmodel.getColumnCount(); i++) {
-//                    tempData[i] = rs.getNString(i+1);
-//                }
-//                tbmodel.addRow(tempData);
-            }
+                for (int i = 0; i < kolomLength; i++) {
+                    tempData[i] = rs.getString(i+1);
+                }
+                tbmodel.addRow(tempData);
+                
+           }
             
         }
         catch(SQLException sE){
             System.out.println(sE);
         }
         finally{
-            try {
-                koneksi.conn.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(MainJframe.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            ConnectionDbLafo.connectionClose();
         }
         
         jTableUser.setModel(tbmodel);
+        
         
     }
     
@@ -1617,7 +1622,21 @@ public class MainJframe extends javax.swing.JFrame {
     private void jLabelUsesrsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUsesrsMouseClicked
         // TODO add your handling code here:
         Utility.setSideBar(panel_ContenContainer, Users);
-        tabelUser();
+//        tabelUser();
+        String sql= "SELECT "
+                + "`Id_Pegawai`, "
+                + "`Nama_Pegawai`, "
+                + "`Gender`, "
+                + "`Alamat`, "
+                + "`No_Hp`, "
+                + "`Status_pengguna`, "
+                + "`Tanggal_Terdaftar`, "
+                + "`kode_hak_akses` "
+                + "FROM `penngguna` WHERE 1";
+        String[] header = {"ID","Nama","Gender","Alamt","No Hp","Status","gabung","hak akses"};
+        DisplayerDbLafo.tabel(sql, header, jTableUser);
+                
+        
     }//GEN-LAST:event_jLabelUsesrsMouseClicked
 
     private void cardTotalBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardTotalBarangMouseClicked
