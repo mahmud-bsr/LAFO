@@ -5,7 +5,21 @@
  */
 package lafo.view;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
+//import jdk.javadoc.internal.doclets.formats.html.markup.TableHeader;
 import lafo.proses.Utility;
+import lafo.proses.DataBase.Koneksi;
+import lafo.proses.DataBase.DataBaseDisplayer;
 
 /**
  *
@@ -13,11 +27,14 @@ import lafo.proses.Utility;
  */
 public class MainJframe extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form Kasir
      */
     public MainJframe() {
         initComponents();
+        
+//        tabelBarang();
     }
 
     /**
@@ -119,7 +136,7 @@ public class MainJframe extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jTableUser = new javax.swing.JTable();
         transaksi = new javax.swing.JPanel();
         jTextFieldcari = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -1135,7 +1152,7 @@ public class MainJframe extends javax.swing.JFrame {
 
         jScrollPane2.setPreferredSize(new java.awt.Dimension(1348, 661));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        jTableUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1146,7 +1163,7 @@ public class MainJframe extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable3);
+        jScrollPane2.setViewportView(jTableUser);
 
         javax.swing.GroupLayout UsersLayout = new javax.swing.GroupLayout(Users);
         Users.setLayout(UsersLayout);
@@ -1516,9 +1533,71 @@ public class MainJframe extends javax.swing.JFrame {
         
         //membuat tabel model
         
+        
 //        jTableBarang.set
     }
     
+    Koneksi ConnectionDbLafo = new Koneksi();
+    DataBaseDisplayer DisplayerDbLafo = new DataBaseDisplayer(ConnectionDbLafo);
+    
+    private  void tabelUser(){
+        DefaultTableModel tbmodel = new DefaultTableModel();
+        
+        
+        String sqlTabelUser = "SELECT "
+                + "`Id_Pegawai`, "
+                + "`Nama_Pegawai`, "
+                + "`Gender`, "
+                + "`Alamat`, "
+                + "`No_Hp`, "
+                + "`Status_pengguna`, "
+                + "`Tanggal_Terdaftar`, "
+                + "`kode_hak_akses` "
+                + "FROM `penngguna` WHERE 1";
+        
+        //seting table heeader
+        String[] field = {"ID","Nama","Gender","Alamt","No Hp","Status","gabung","hak akses"};
+        for (int i = 0; i < field.length; i++) {
+            tbmodel.addColumn(field[i]);
+        }
+        
+        
+        //mengisi data 
+        
+        jTableUser.setModel(tbmodel);
+        int kolomLength = tbmodel.getColumnCount() ;
+        Object[] tempData = new Object[kolomLength];
+
+        System.out.println("kolom = "+ kolomLength);
+
+        try{
+            ConnectionDbLafo.connecting();
+            PreparedStatement pst = ConnectionDbLafo.conn.prepareStatement(sqlTabelUser);
+            ResultSet rs = pst.executeQuery();
+            
+            while(rs.next()){
+                
+            
+//                System.out.println(rs.toString());
+                for (int i = 0; i < kolomLength; i++) {
+                    tempData[i] = rs.getString(i+1);
+                }
+                tbmodel.addRow(tempData);
+                
+           }
+            
+        }
+        catch(SQLException sE){
+            System.out.println(sE);
+        }
+        finally{
+            ConnectionDbLafo.connectionClose();
+        }
+        
+        jTableUser.setModel(tbmodel);
+        
+        
+    }
     
     // navigasi
     private void panelNavigasiBarComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_panelNavigasiBarComponentMoved
@@ -1543,6 +1622,21 @@ public class MainJframe extends javax.swing.JFrame {
     private void jLabelUsesrsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUsesrsMouseClicked
         // TODO add your handling code here:
         Utility.setSideBar(panel_ContenContainer, Users);
+//        tabelUser();
+        String sql= "SELECT "
+                + "`Id_Pegawai`, "
+                + "`Nama_Pegawai`, "
+                + "`Gender`, "
+                + "`Alamat`, "
+                + "`No_Hp`, "
+                + "`Status_pengguna`, "
+                + "`Tanggal_Terdaftar`, "
+                + "`kode_hak_akses` "
+                + "FROM `penngguna` WHERE 1";
+        String[] header = {"ID","Nama","Gender","Alamt","No Hp","Status","gabung","hak akses"};
+        DisplayerDbLafo.tabel(sql, header, jTableUser);
+                
+        
     }//GEN-LAST:event_jLabelUsesrsMouseClicked
 
     private void cardTotalBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardTotalBarangMouseClicked
@@ -1648,6 +1742,7 @@ public class MainJframe extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
@@ -1680,8 +1775,15 @@ public class MainJframe extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainJframe().setVisible(true);
+                
+                MainJframe main = new MainJframe();
+                
+                main.tabelUser();
+                
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1783,10 +1885,10 @@ public class MainJframe extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPanelKategori;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTableBarang;
     private javax.swing.JTable jTableKategori;
     private javax.swing.JTable jTableTransaksi;
+    private javax.swing.JTable jTableUser;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
