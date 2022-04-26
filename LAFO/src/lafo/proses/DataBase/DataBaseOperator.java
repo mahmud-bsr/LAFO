@@ -5,24 +5,36 @@ package lafo.proses.DataBase;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import lafo.view.MainJframe;
 
 
-public class DataBaseDisplayer extends Koneksi{
+
+public class DataBaseOperator extends Koneksi{
 private Koneksi koneksi;
-private Koneksi defauultConnection = new Koneksi();
 private String sqlTabel;
 private String[] field;
 
     //konstruktor
-    public DataBaseDisplayer(Koneksi koneksi) {
+    public DataBaseOperator(Koneksi koneksi) {
         this.koneksi = koneksi;
     }
     
+    //fungsi untuk meng eksekusi sql
+    public void DatabaseExecutor(String sql, boolean CloseAfterExecute){
+        try {
+            koneksi.connecting();
+            PreparedStatement pst = koneksi.conn.prepareStatement(sqlTabel);
+        }catch(SQLException SQLe){
+            System.out.println("gagal eksekusi sql: "+SQLe);
+        }finally{
+            if (CloseAfterExecute) {
+                koneksi.connectionClose();
+            }
+        }
+    }
+    
+    //fungsi untuk menampilkan data dari database ke jtabel 
     public void tabel(String sqlTabel, String[] FieldTabel, JTable tabel){
         DefaultTableModel tbmodel = new DefaultTableModel();
         
@@ -44,8 +56,8 @@ private String[] field;
 
         try{
             //mengambil data dari data base melalui object koneksi
-            defauultConnection.connecting();
-            PreparedStatement pst = defauultConnection.conn.prepareStatement(sqlTabel);
+            koneksi.connecting();
+            PreparedStatement pst = koneksi.conn.prepareStatement(sqlTabel);
             ResultSet rs = pst.executeQuery();
             
             //mengambil hasil dari query keadlam object penampung data (tempData)

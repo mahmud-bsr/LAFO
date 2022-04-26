@@ -19,7 +19,7 @@ import javax.swing.table.TableColumnModel;
 //import jdk.javadoc.internal.doclets.formats.html.markup.TableHeader;
 import lafo.proses.Utility;
 import lafo.proses.DataBase.Koneksi;
-import lafo.proses.DataBase.DataBaseDisplayer;
+import lafo.proses.DataBase.DataBaseOperator;
 
 /**
  *
@@ -1538,7 +1538,7 @@ public class MainJframe extends javax.swing.JFrame {
     }
     
     Koneksi ConnectionDbLafo = new Koneksi();
-    DataBaseDisplayer DisplayerDbLafo = new DataBaseDisplayer(ConnectionDbLafo);
+    DataBaseOperator DisplayerDbLafo = new DataBaseOperator(ConnectionDbLafo);
     
     private  void tabelUser(){
         DefaultTableModel tbmodel = new DefaultTableModel();
