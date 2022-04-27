@@ -5,6 +5,8 @@
  */
 package lafo.view;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,6 +22,7 @@ import javax.swing.table.TableColumnModel;
 import lafo.proses.Utility;
 import lafo.proses.DataBase.Koneksi;
 import lafo.proses.DataBase.DataBaseOperator;
+import lafo.view.PopUp.Kasir.Kasir_enter;
 
 /**
  *
@@ -1198,10 +1201,20 @@ public class MainJframe extends javax.swing.JFrame {
         panel_ContenContainer.add(Users, "card5");
 
         transaksi.setBackground(new java.awt.Color(233, 235, 239));
+        transaksi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                transaksiKeyPressed(evt);
+            }
+        });
 
         jTextFieldcari.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTextFieldcari.setText("Cari");
         jTextFieldcari.setPreferredSize(new java.awt.Dimension(837, 55));
+        jTextFieldcari.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldcariKeyTyped(evt);
+            }
+        });
 
         jScrollPane3.setPreferredSize(new java.awt.Dimension(837, 793));
 
@@ -1741,6 +1754,23 @@ public class MainJframe extends javax.swing.JFrame {
     private void jButtonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubmitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSubmitActionPerformed
+
+    private void transaksiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_transaksiKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Kasir_enter popUpKasirEnter = new Kasir_enter();
+            popUpKasirEnter.setVisible(true);
+            System.out.println("enter dipencet");
+        }
+    }//GEN-LAST:event_transaksiKeyPressed
+
+    private void jTextFieldcariKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldcariKeyTyped
+        // TODO add your handling code here:
+       
+        Kasir_enter popUpKasirEnter = new Kasir_enter();
+        popUpKasirEnter.Action("anjing");
+        
+    }//GEN-LAST:event_jTextFieldcariKeyTyped
 
     
     /**
