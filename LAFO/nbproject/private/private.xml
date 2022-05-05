@@ -9,9 +9,13 @@
         </group>
         <group>
             <file>file:/D:/KULIAH/Semester%202/tugas%20akhir/Lavo%20mahmud/LAFO/src/lafo/view/MainJframe.java</file>
+<<<<<<< Updated upstream
             <file>file:/D:/KULIAH/Semester%202/tugas%20akhir/Lavo%20mahmud/LAFO/src/lafo/proses/DataBase/Koneksi.java</file>
             <file>file:/D:/KULIAH/Semester%202/tugas%20akhir/Lavo%20mahmud/LAFO/src/lafo/view/Login.java</file>
             <file>file:/D:/KULIAH/Semester%202/tugas%20akhir/Lavo%20mahmud/LAFO/src/lafo/proses/DataBase/DataBaseOperator.java</file>
+=======
+            <file>file:/D:/KULIAH/Semester%202/tugas%20akhir/Lavo%20mahmud/LAFO/src/lafo/view/PopUp/Kasir/Kasir_enter.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
