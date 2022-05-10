@@ -107,7 +107,7 @@ public class MainJframe extends javax.swing.JFrame {
         ComboBoxShowEntries1 = new javax.swing.JComboBox<>();
         LabelEntryes1 = new javax.swing.JLabel();
         ContainerTabelSuplai = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableSuplier = new javax.swing.JTable();
         containerFormSuplaier = new javax.swing.JPanel();
         labelTxtFldKdSupp = new javax.swing.JLabel();
         jTextFieldKodeSuplier = new javax.swing.JTextField();
@@ -881,7 +881,7 @@ public class MainJframe extends javax.swing.JFrame {
 
         ContainerTabelSuplai.setPreferredSize(new java.awt.Dimension(841, 624));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableSuplier.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -892,7 +892,7 @@ public class MainJframe extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        ContainerTabelSuplai.setViewportView(jTable1);
+        ContainerTabelSuplai.setViewportView(jTableSuplier);
 
         containerFormSuplaier.setPreferredSize(new java.awt.Dimension(520, 624));
 
@@ -1806,6 +1806,26 @@ public class MainJframe extends javax.swing.JFrame {
         
     }
     
+    private void tampilDataPegawai(){
+        String sql= "SELECT * FROM `pegawai`";
+        String[] header = {"ID","Nama","Gender","Alamt","No Hp","gabung","Status","hak akses"};
+        DisplayerDbLafo.tabel(sql, header, jTableUser);
+    }
+    
+    private void tampilDataBarang(){
+        String sql =  "SELECT * FROM `barang`";
+        String[] headerTabelBarang = {"kode barang", "nama", "satuan"};
+        
+        DisplayerDbLafo.tabel(sql, headerTabelBarang, jTableBarang);
+    }
+    
+    private void tampilDataSuplier(){
+        String sql = "SELECT * FROM `suplier`";
+        String[] headerTabelSuplier = {"kode Suplier", "no telp", "alamat", "nama suplier"};
+        
+        DisplayerDbLafo.tabel(sql, headerTabelSuplier, jTableSuplier);
+    }
+    
     // navigasi
     private void panelNavigasiBarComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_panelNavigasiBarComponentMoved
         // TODO add your handling code here:
@@ -1830,18 +1850,11 @@ public class MainJframe extends javax.swing.JFrame {
         // TODO add your handling code here:
         Utility.setSideBar(panel_ContenContainer, Users);
 //        tabelUser();
-        String sql= "SELECT "
-                + "`Id_Pegawai`, "
-                + "`Nama_Pegawai`, "
-                + "`Gender`, "
-                + "`Alamat`, "
-                + "`No_Hp`, "
-                + "`Status_pengguna`, "
-                + "`Tanggal_Terdaftar`, "
-                + "`kode_hak_akses` "
-                + "FROM `penngguna` WHERE 1";
-        String[] header = {"ID","Nama","Gender","Alamt","No Hp","Status","gabung","hak akses"};
-        DisplayerDbLafo.tabel(sql, header, jTableUser);
+//        String sql= "SELECT * FROM `pegawai`";
+//        String[] header = {"ID","Nama","Gender","Alamt","No Hp","gabung","Status","hak akses"};
+//        DisplayerDbLafo.tabel(sql, header, jTableUser);
+
+        tampilDataPegawai();
                 
         
     }//GEN-LAST:event_jLabelUsesrsMouseClicked
@@ -1849,11 +1862,13 @@ public class MainJframe extends javax.swing.JFrame {
     private void cardTotalBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardTotalBarangMouseClicked
         // TODO add your handling code here:
         Utility.setSideBar(ContainerConten, DataBarang);
+        tampilDataBarang();
     }//GEN-LAST:event_cardTotalBarangMouseClicked
 
     private void cardTotalSuplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardTotalSuplierMouseClicked
         // TODO add your handling code here:
         Utility.setSideBar(ContainerConten, DataSuplier);
+        tampilDataSuplier();
     }//GEN-LAST:event_cardTotalSuplierMouseClicked
 
     private void cardTotalKategoriMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardTotalKategoriMouseClicked
@@ -2032,8 +2047,9 @@ public class MainJframe extends javax.swing.JFrame {
                 
                 MainJframe main = new MainJframe();
                 
-                main.tabelUser();
-                
+                main.tampilDataPegawai();
+                main.tampilDataBarang();
+                main.tampilDataSuplier();
             }
         });
         
@@ -2147,10 +2163,10 @@ public class MainJframe extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPanelKategori;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTableBarang;
     private javax.swing.JTable jTableKategori;
+    private javax.swing.JTable jTableSuplier;
     private javax.swing.JTable jTableTransaksi;
     private javax.swing.JTable jTableUser;
     private javax.swing.JTextField jTextField1;
